@@ -87,23 +87,7 @@ public class DataChartPredPreyStarterFile {
 
         try {
          /*
-
-            String line = reader.readLine(); // read a line to skip the header
-            while ((line = reader.readLine()) != null) {
-                //  use comma as the delimeter.
-                String[] values = line.split(",");
-                xData.add(Integer.parseInt(values[0]));
-                yData.add(Integer.parseInt(values[1]));
-                // We have an extra Y axis for this graph
-                if (values.length > 2) {
-                    yData1.add(Integer.parseInt(values[2]));
-                }
-            }
-            reader.close();
-            //  Add the three series to a List of lists
-            allSeries.add(xData);
-            allSeries.add(yData);
-            allSeries.add(yData1);
+        Add your code here
  */
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());

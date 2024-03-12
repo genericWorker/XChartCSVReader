@@ -20,21 +20,20 @@ public class DataChartUnemployment {
     }
 
        public void drawChart() {
-           // Step 1: Create a chart
+           // Create a chart
            XYChart chart = new XYChartBuilder().width(800).height(600).title("Date Chart").xAxisTitle("Date").yAxisTitle("Value").build();
-
            try {
-               // Step 2: Get CSV data
+               //  Get datasets from CSV file
                List<List> allSeries = getAllSeries(chart, new File("resources/UnemploymentDataUS.csv"));
                List<Date> dates = allSeries.get(0);
                List<Integer> values = allSeries.get(1);
+               //  Add the data series to the chart
                chart.addSeries("Unemployment US Series", dates, values);
-
-               // Step 3: Customize the chart
+               // Customize the chart
                chart.getStyler().setLegendPosition(Styler.LegendPosition.InsideNW);
                chart.getStyler().setXAxisTickMarkSpacingHint(100); // Adjust the tick mark spacing for better readability
                chart.getStyler().setDatePattern("MM-yyyy");
-               // Step 4: Display the chart
+               //  Set axis labels and display the chart
                chart.setYAxisTitle("Unemployment Rate");
                chart.setXAxisTitle("Month Year");
                chart.setTitle("Unemployment US 1948-2020");
@@ -57,12 +56,7 @@ public class DataChartUnemployment {
                 // Read and parse the rest of the lines
                 String line;
                 while ((line = br.readLine()) != null) {
-                    String[] parts = line.split(",");
-                    // Assuming the first column is date and the second column is the value
-                    Date date = parseDate(parts[0].trim());
-                    Double value = Double.parseDouble(parts[1].trim());
-                    dates.add(date);
-                    values.add(value);
+                  //  Add your code here
                 }
             }
             List<List> allSeries = new ArrayList<List>();;
@@ -72,7 +66,7 @@ public class DataChartUnemployment {
         }
 
         private Date parseDate(String dateString) throws ParseException {
-            // Manually parse the date based on your date format
+            // Parse the date based on your date format
             return new SimpleDateFormat("MM/dd/YYYY").parse(dateString);
         }
     }
